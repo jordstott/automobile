@@ -1,0 +1,28 @@
+create table Records (
+	ID INT,
+	Vehicle_ID INT,
+	Date_Serviced DATE,
+	mot DATE,
+	tax VARCHAR(50)
+);
+
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (1, 1, '11/25/2017', '7/31/2017', '£351.32');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (2, 2, '6/2/2017', '6/16/2017', '£412.60');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (3, 3, '2/6/2018', '10/23/2017', '£402.76');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (4, 4, '12/13/2017', '10/31/2017', '£58.00');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (5, 5, '9/27/2017', '3/19/2018', '£126.70');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (6, 6, '7/10/2017', '10/21/2017', '£465.36');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (7, 7, '12/3/2017', '12/11/2017', '£487.92');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (8, 8, '8/18/2017', '4/13/2017', '£179.29');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (9, 9, '4/22/2017', '6/4/2017', '£87.47');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (10, 10, '11/17/2017', '6/25/2017', '£259.14');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (11, 11, '2/15/2018', '4/18/2017', '£190.69');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (12, 12, '7/17/2017', '7/23/2017', '£492.86');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (13, 13, '12/24/2017', '4/26/2017', '£244.73');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (14, 14, '4/18/2017', '7/8/2017', '£305.28');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (15, 15, '5/17/2017', '3/4/2018', '£79.65');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (16, 16, '1/24/2018', '2/24/2018', '£136.99');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (17, 17, '3/11/2018', '7/7/2017', '£406.97');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (18, 18, '9/1/2017', '12/12/2017', '£120.94');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (19, 19, '10/18/2017', '2/21/2018', '£440.70');
+insert into Records (Record_ID, Vehicle_ID, Date_Serviced, mot, tax) values (20, 20, '7/15/2017', '12/21/2017', '£283.30');

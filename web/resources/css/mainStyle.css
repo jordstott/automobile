@@ -1,0 +1,130 @@
+/* Main Style CSS */
+
+*
+{
+    margin: 0;
+}
+
+body
+{
+    
+}
+
+#wrapper
+{
+    margin: auto;
+    width: 900px;
+    background-color: #f2f2f2;
+    box-shadow: 0px 3px 10px grey;
+}
+
+#header
+{
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+    width: 500px;
+    min-height: 200px;
+}
+
+#header img
+{
+    width: 50%;
+    transition-duration: 1s;
+    border-radius: 20px;
+}
+
+#header img:hover
+{
+    width: 60%;
+    transition-duration: 1s;
+}
+
+#content
+{
+    margin: auto;
+    text-align: left;
+    width: 800px;
+    min-height: 500px;
+}
+
+#footer
+{
+    margin: auto;
+    text-align: center;
+    width: 500px;
+    padding-bottom: 3px;
+}
+
+.leftCol
+{
+    display: inline-block;
+    width: 69%;
+    border-right: solid #cccccc;
+    border-width: 1px;
+    min-height: 200px;
+    max-height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.rightCol
+{
+    display: inline-block;
+    width: 30%;
+    padding-top: 20px;
+    float: right;
+    text-align: center;
+}
+
+.rightCol .button
+{
+    width: 50%;
+    height: 30px;
+    margin: 5px;
+}
+
+#dataTable
+{
+    width: 100%;
+}
+
+#dataTable td
+{
+    border-top: solid #cccccc;
+    border-width: 1px;
+    padding: 10px;
+}
+
+#dataTable td:not(:last-child)
+{
+    border-right: solid #cccccc;
+    border-width: 1px;
+}
+
+#messages
+{
+    text-align: center;
+    padding: 30px;
+}
+
+#commentTable
+{
+    border-top: solid black;
+    border-width: 1px;
+    width: 100%;
+}
+
+#commentTable td:not(:last-child)
+{
+    border-right: solid #cccccc;
+    border-width: 1px;
+    padding: 10px;
+}
+
+#commentTable td
+{
+    border-bottom: solid #cccccc;
+    border-width: 1px;
+    padding: 10px;
+}

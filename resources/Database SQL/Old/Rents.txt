@@ -1,0 +1,28 @@
+create table Rents (
+	ID INT,
+	vehicle_ID INT,
+	date DATE,
+	payment_total VARCHAR(50),
+	username VARCHAR(50)
+);
+
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (1, 1, '26/03/2018', '£182.13', 'kgodfery0');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (2, 2, '06/03/2018', '£311.57', 'hcurnucke1');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (3, 3, '11/03/2018', '£735.58', 'wlyndon2');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (4, 4, '14/03/2018', '£347.75', 'igiblin3');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (5, 5, '17/03/2018', '£349.86', 'amcquaide4');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (6, 6, '19/03/2018', '£179.43', 'jminico5');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (7, 7, '09/03/2018', '£211.19', 'amanvell6');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (8, 8, '31/03/2018', '£663.75', 'cwalbrun7');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (9, 9, '19/03/2018', '£101.61', 'rogormally8');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (10, 10, '26/03/2018', '£241.49', 'upattington9');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (11, 11, '14/03/2018', '£163.83', 'tstormsa');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (12, 12, '17/03/2018', '£530.70', 'tgisburnb');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (13, 13, '20/03/2018', '£295.07', 'emccurleyc');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (14, 14, '14/03/2018', '£117.77', 'ddid');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (15, 15, '28/03/2018', '£406.35', 'bholdalle');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (16, 16, '22/03/2018', '£509.44', 'mdysterf');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (17, 17, '28/03/2018', '£483.27', 'cbockmasterg');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (18, 18, '21/03/2018', '£808.06', 'lmereweatherh');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (19, 19, '27/03/2018', '£284.97', 'wdunhilli');
+insert into Rents (ID, vehicle_ID, date, payment_total, username) values (20, 20, '26/03/2018', '£739.38', 'rplaxtonj');

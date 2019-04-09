@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    <h:head>
+        <h:outputStylesheet name="css/mainStyle.css" />
+    </h:head>
+    
+    <h:body>
+        <div id="wrapper">
+            
+            <div id="header">
+                <ui:insert name="header">
+                    <h:form>
+                        <h:commandLink action="index">
+                            <h:graphicImage value="resources/images/logoSmall.png"/>
+                        </h:commandLink>
+                    </h:form>
+                </ui:insert>
+            </div>
+
+            <div id="content">
+                <ui:insert name="content">
+                    
+                </ui:insert>
+                <div id="messages">
+                    <h:messages style="color: red; list-style-type: none;" id="tempNewPasswordCheck" />
+                </div>
+            </div>
+
+            <div id="footer">
+                <ui:insert name="footer">
+                    <p>Copyright 2018 © Automobile Online</p>
+                </ui:insert>
+            </div>
+            
+        </div>
+    </h:body>
+    
+</html>
+

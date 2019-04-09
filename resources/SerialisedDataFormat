@@ -1,0 +1,14 @@
+Serialised data format:
+
+Vehicles:
+(P)vehicle_ID, brand, vehicle_Type, availability, insurance
+
+Rents:
+(P)Rent_ID, (F)Vehicle_ID, Date, payment_Total, username, 
+
+
+Records:
+(P)Record_ID, (F)Vehicle_ID, date_Serviced, mot, tax
+
+Customers: 
+(p)username, customer_name,password, Mobile_Number, email 

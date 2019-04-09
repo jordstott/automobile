@@ -1,0 +1,28 @@
+create table Customers (
+	username VARCHAR(50),
+	name VARCHAR(50),
+	password VARCHAR(50),
+	mobile_number VARCHAR(50),
+	email VARCHAR(50)
+);
+
+insert into Customers (username, name, password, mobile_number, email) values ('kgodfery0', 'Kate Godfery', 'UfPhpLyEmhBS', '02035449972', 'kgodfery0@tripadvisor.com');
+insert into Customers (username, name, password, mobile_number, email) values ('hcurnucke1', 'Honor Curnucke', 'HADMaQP5l44', '03998482610', 'hcurnucke1@goo.gl');
+insert into Customers (username, name, password, mobile_number, email) values ('wlyndon2', 'Wallace Lyndon', 'lJnsr8', '04989449763', 'wlyndon2@npr.org');
+insert into Customers (username, name, password, mobile_number, email) values ('igiblin3', 'Issie Giblin', 'r8VKEy', '05558969834', 'igiblin3@indiegogo.com');
+insert into Customers (username, name, password, mobile_number, email) values ('amcquaide4', 'Alonzo McQuaide', 'CFoD1IJMD', '06069166708', 'amcquaide4@theatlantic.com');
+insert into Customers (username, name, password, mobile_number, email) values ('jminico5', 'Joni Minico', 'YxJxtdt5owD7', '05934398946', 'jminico5@hhs.gov');
+insert into Customers (username, name, password, mobile_number, email) values ('amanvell6', 'Aland Manvell', '4TKq22uON69', '02674810901', 'amanvell6@pagesperso-orange.fr');
+insert into Customers (username, name, password, mobile_number, email) values ('cwalbrun7', 'Cissiee Walbrun', '2pLsKrvvd', '09973978615', 'cwalbrun7@last.fm');
+insert into Customers (username, name, password, mobile_number, email) values ('rogormally8', 'Riley O''Gormally', 'IvN14zK', '08173953633', 'rogormally8@desdev.cn');
+insert into Customers (username, name, password, mobile_number, email) values ('upattington9', 'Ulrika Pattington', 'u3Xt8p', '09651818952', 'upattington9@angelfire.com');
+insert into Customers (username, name, password, mobile_number, email) values ('tstormsa', 'Tuckie Storms', 'zX1CRMMZ7WV6', '07297104112', 'tstormsa@cornell.edu');
+insert into Customers (username, name, password, mobile_number, email) values ('tgisburnb', 'Tristan Gisburn', '8Qo66ZO', '09218534464', 'tgisburnb@alexa.com');
+insert into Customers (username, name, password, mobile_number, email) values ('emccurleyc', 'Elisabeth McCurley', '3a9XCtlR87h', '02095552343', 'emccurleyc@pen.io');
+insert into Customers (username, name, password, mobile_number, email) values ('ddid', 'Dedra Di Angelo', 'GF5x1to', '04653603704', 'ddid@state.gov');
+insert into Customers (username, name, password, mobile_number, email) values ('bholdalle', 'Blakeley Holdall', 'Zliluo14DZUn', '03506248998', 'bholdalle@mapy.cz');
+insert into Customers (username, name, password, mobile_number, email) values ('mdysterf', 'Myranda Dyster', 'GXjqa3w5zg', '05957207234', 'mdysterf@columbia.edu');
+insert into Customers (username, name, password, mobile_number, email) values ('cbockmasterg', 'Cleve Bockmaster', 'bRDR8g172', '02161672005', 'cbockmasterg@tinypic.com');
+insert into Customers (username, name, password, mobile_number, email) values ('lmereweatherh', 'Lorettalorna Mereweather', 'yPgs7P3VidIA', '04369166248', 'lmereweatherh@bbb.org');
+insert into Customers (username, name, password, mobile_number, email) values ('wdunhilli', 'Willetta Dunhill', 'frlyi7s', '01404348466', 'wdunhilli@latimes.com');
+insert into Customers (username, name, password, mobile_number, email) values ('rplaxtonj', 'Ronald Plaxton', 'I84UUwaV3', '01036814195', 'rplaxtonj@blog.com');

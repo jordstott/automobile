@@ -1,0 +1,84 @@
+/* ----- Customers table and sample data -----*/
+CREATE TABLE customers (
+	username VARCHAR(20) NOT NULL,
+	customer_name VARCHAR(30) NOT NULL,
+	password VARCHAR(16) NOT NULL,
+	mobile_number VARCHAR(12) NOT NULL,
+	email VARCHAR(30),
+	CONSTRAINT PK_customer PRIMARY KEY (username)
+);
+insert into Customers (username, customer_name, password, mobile_number, email) values ('Test', 'Test User', 'test1', '02035449972', 'kgodfery0@tripadvisor.com');
+insert into Customers (username, customer_name, password, mobile_number, email) values ('hcurnucke1', 'Honor Curnucke', 'HADMaQP5l44', '03998482610', 'hcurnucke1@goo.gl');
+insert into Customers (username, customer_name, password, mobile_number, email) values ('wlyndon2', 'Wallace Lyndon', 'lJnsr8', '04989449763', 'wlyndon2@npr.org');
+insert into Customers (username, customer_name, password, mobile_number, email) values ('igiblin3', 'Issie Giblin', 'r8VKEy', '05558969834', 'igiblin3@indiegogo.com');
+insert into Customers (username, customer_name, password, mobile_number, email) values ('amcquaide4', 'Alonzo McQuaide', 'CFoD1IJMD', '06069166708', 'amcquaide4@theatlantic.com');
+
+
+/* ----- Records table and sample data -----*/
+CREATE TABLE records (
+	record_id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+	vehicle_id INT NOT NULL,
+	date_serviced DATE NOT NULL,
+	mot DATE NOT NULL,
+	tax VARCHAR(10) NOT NULL,
+	CONSTRAINT PK_record PRIMARY KEY (record_id)
+);
+insert into Records (vehicle_id, date_serviced, mot, tax) values (1, '18.2.2017', '17.3.2017', '£351.32');
+insert into Records (vehicle_id, date_serviced, mot, tax) values (2, '16.2.2017', '26.1.2017', '£412.60');
+insert into Records (vehicle_id, date_serviced, mot, tax) values (3, '22.6.2018', '10.2.2017', '£402.76');
+insert into Records (vehicle_id, date_serviced, mot, tax) values (4, '11.1.2017', '13.3.2017', '£58.00');
+insert into Records (vehicle_id, date_serviced, mot, tax) values (5, '4.2.2017', '3.1.2018', '£126.70');
+
+
+/* ----- Rents table and sample data -----*/
+CREATE TABLE rents (
+	rent_id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+	vehicle_id INT NOT NULL,
+	date DATE NOT NULL,
+	username VARCHAR(20) NOT NULL,
+	CONSTRAINT PK_rents PRIMARY KEY (rent_id)
+);
+insert into Rents (vehicle_id, date, username) values (1, '26.03.2018', 'hcurnucke1');
+insert into Rents (vehicle_id, date, username) values (2, '26.03.2018', 'wlyndon2');
+
+
+/* ----- Vehicles table and sample data -----*/
+CREATE TABLE vehicles (
+	vehicle_id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+	brand VARCHAR(20) NOT NULL,
+	vehicle_type VARCHAR(20) NOT NULL,
+	availability BOOLEAN NOT NULL,
+	insurance VARCHAR(10) NOT NULL,
+	CONSTRAINT PK_vehicle PRIMARY KEY (vehicle_id)
+);
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Volkswagen', 'rio', false, '£137.64');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Subaru', 'Impreza', false, '£265.14');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Chevrolet', 'Equinox', true, '£155.38');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Eagle', 'Summit', true, '£269.87');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Porsche', 'Cayman', true, '£132.53');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('GMC', '2500', true, '£121.15');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Acura', 'MDX', true, '£283.51');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Saturn', 'Relay', true, '£215.76');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Lexus', 'IS F', true, '£402.48');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Acura', 'ZDX', true, '£149.24');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Pontiac', 'Montana', true, '£379.76');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Ford', 'Ranger', true, '£369.36');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('GMC', 'Savana 2500', true, '£387.47');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Honda', 'Civic', true, '£272.85');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Hyundai', 'Accent', true, '£138.67');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Chrysler', 'LHS', true, '£236.99');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Pontiac', 'LeMans', true, '£455.90');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('GMC', 'Vandura G2500', true, '£426.27');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Chevrolet', 'Express 3500', true, '£115.82');
+insert into Vehicles (brand, vehicle_type, availability, insurance) values ('Mercury', 'Tracer', true, '£480.39');
+
+
+/* ----- Comments table and sample data -----*/
+CREATE TABLE Comments (
+	comment_id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+	username VARCHAR(50),
+	text VARCHAR(100),
+	CONSTRAINT PK_comment PRIMARY KEY (comment_id)
+);
+insert into Comments (username, text) values ('GoodUser1', 'Hello! I love this website, its so easy to rent cars!');
+insert into Comments (username, text) values ('TrollUser1', 'HIHIHIH I LOVE CHEESE');

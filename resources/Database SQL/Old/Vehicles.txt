@@ -1,0 +1,28 @@
+create table Vehicles (
+	ID INT,
+	brand VARCHAR(50),
+	vehicle_type VARCHAR(50),
+	availability VARCHAR(50),
+	insurance VARCHAR(50)
+);
+
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (1, 'Volkswagen', 'rio', false, '£137.64');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (2, 'Subaru', 'Impreza', true, '£265.14');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (3, 'Chevrolet', 'Equinox', true, '£155.38');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (4, 'Eagle', 'Summit', true, '£269.87');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (5, 'Porsche', 'Cayman', true, '£132.53');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (6, 'GMC', '2500', true, '£121.15');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (7, 'Acura', 'MDX', true, '£283.51');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (8, 'Saturn', 'Relay', false, '£215.76');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (9, 'Lexus', 'IS F', false, '£402.48');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (10, 'Acura', 'ZDX', true, '£149.24');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (11, 'Pontiac', 'Montana', true, '£379.76');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (12, 'Ford', 'Ranger', false, '£369.36');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (13, 'GMC', 'Savana 2500', false, '£387.47');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (14, 'Honda', 'Civic', true, '£272.85');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (15, 'Hyundai', 'Accent', false, '£138.67');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (16, 'Chrysler', 'LHS', false, '£236.99');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (17, 'Pontiac', 'LeMans', false, '£455.90');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (18, 'GMC', 'Vandura G2500', true, '£426.27');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (19, 'Chevrolet', 'Express 3500', true, '£115.82');
+insert into Vehicles (ID, brand, vehicle_Type, availability, insurance) values (20, 'Mercury', 'Tracer', true, '£480.39');

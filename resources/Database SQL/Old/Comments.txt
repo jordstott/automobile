@@ -1,0 +1,12 @@
+create table Comments (
+	username VARCHAR(50),
+	text VARCHAR(100)
+);
+
+insert into Comments (username, text) values ('GoodUser1', 'Hello! I love this website, its so easy to rent cars!');
+insert into Comments (username, text) values ('TrollUser1', 'HIHIHIH I LOVE CHEESE');
+
+
+
+--- Example XSS vulnerability: ---
+insert into Comments (username, text) values ('XSS_HACKER', '<script> alert("XSS Hacked"); </script>');

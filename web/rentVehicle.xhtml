@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <title>Automobile Online</title>
+    </h:head>
+    
+    <h:body>
+        <ui:composition template="mainTemplate.xhtml">
+            
+            <ui:define name="content">
+                
+                <div class="rightCol">
+                    <p>Welcome #{mainBean.currentUser}</p> <br />
+                    <p>Choose your dream car and rent one today!</p><br />
+                    <h:form>
+                        <h:commandButton value="Sign Out" action="#{userBean.signOut()}" styleClass="button"/>
+                    </h:form>
+                </div>
+                
+                
+                <div class="leftCol">
+                    <h:dataTable value="#{vehicleBean.getVehicles()}" var="vehicle" id="dataTable">
+                        <h:column>
+                            <f:facet name="header">ID:</f:facet>
+                            #{vehicle.id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Name:</f:facet>
+                            #{vehicle.name}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Type:</f:facet>
+                            #{vehicle.type}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Availability:</f:facet>
+                            #{vehicle.availability}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Rent:</f:facet>
+                            <h:form>
+                                <h:commandButton value="Rent" action="#{vehicleBean.rentVehicle(vehicle.id)}" styleClass="button"/>
+                            </h:form>
+                        </h:column>
+                    </h:dataTable>
+                </div>
+                
+            </ui:define>
+            
+        </ui:composition>  
+    </h:body>
+    
+</html>
+

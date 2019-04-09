@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <h:head>
+        <title>Automobile Online</title>
+    </h:head>
+    
+    <h:body>
+        <ui:composition template="mainTemplate.xhtml">
+            
+            <ui:define name="content">
+                
+                <div class="rightCol">
+                    <h:form>
+                        <c:if test="${mainBean.currentUser != null}">
+                            <p>Welcome ${mainBean.currentUser}!</p>
+                            <p>We are glad to see you here.</p><br />
+                            <p>Click the button below to rent out a vehicle:</p><br />
+
+                            <h:commandButton value="Rent Vehicle" action="rentVehicle" styleClass="button" /><br />
+                            <h:commandButton id="signOutButton" value="Sign Out" action="#{userBean.signOut()}" styleClass="button"/>
+                        </c:if>
+
+                        <c:if test="${mainBean.currentUser == null}">
+                            <p>Welcome to Automobile Online!</p><br />
+                            <p>We offer high quality car rentals all year around, 24/7.</p><br />
+                            <p>Join us now!</p>
+
+                            <h:commandButton id="loginButton" value="Login" action="loginUser" styleClass="button" /><br />
+                            <h:commandButton id="registerButton" value="Register" action="registerUser" styleClass="button" />    
+                        </c:if>
+                    </h:form>
+                </div>
+                
+                <div class="leftCol">
+                    <h:dataTable value="#{vehicleBean.getVehicles()}" var="vehicle" id="dataTable">
+                        <h:column>
+                            <f:facet name="header">ID:</f:facet>
+                            #{vehicle.id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Name:</f:facet>
+                            #{vehicle.name}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Type:</f:facet>
+                            #{vehicle.type}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Availability:</f:facet>
+                            #{vehicle.availability}
+                        </h:column>
+                    </h:dataTable>
+                </div>
+                
+                <div>
+                    <br></br><br></br>
+                    <h2>Comments:</h2>
+                    <h:dataTable value="#{commentBean.getComments()}" var="comment" id="commentTable">
+                        <h:column>
+                            <f:facet name="header"></f:facet>
+                            <h:outputText value="#{comment.username}" escape="false" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"></f:facet>
+                            <h:outputText value="#{comment.text}" escape="false" />
+                        </h:column>
+                    </h:dataTable>
+                    <br></br>
+                    
+                    <c:if test="${mainBean.currentUser != null}">
+                    <p>Leave a comment!</p>
+                    <h:form>
+                        <h:inputText id="commentBox" value="#{mainBean.commentField}" size="100"/><br></br>
+                        <h:commandButton value="Add Comment" action="#{commentBean.addComment()}" styleClass="button"/>
+                    </h:form>
+                    </c:if>
+                </div>
+                
+            </ui:define>
+            
+        </ui:composition>  
+    </h:body>
+    
+</html>
+
