@@ -1,11 +1,16 @@
 package automobileonline.co;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Named(value = "mainBean")
 @SessionScoped
@@ -17,7 +22,7 @@ public class mainBean implements Serializable {
     private String currentName;
 
     //Login input field storage
-    private String tempUsername;
+    String tempUsername;
     private String tempPassword;
 
     //Register input field storage
@@ -54,7 +59,7 @@ public class mainBean implements Serializable {
         }
         return con;
     }
-
+   
     /**
      * @return the tempUsername
      */

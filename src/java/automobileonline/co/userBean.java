@@ -1,18 +1,31 @@
 package automobileonline.co;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.servlet.ServletContext;
 
 @Named(value = "userBean")
 @SessionScoped
@@ -34,9 +47,33 @@ public class userBean implements Serializable {
     private int limitCount = 3;
     private String limitUsername = "";
 
+    public void addAudit(){
+         String user = mainBean.getTempUsername();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                Date date = new Date();
+        
+                Connection con = mainBean.getConnection();
+        
+        String sql = "INSERT INTO automobile.audit VALUES( '" + user + "', '" 
+                    + date + "');";
+        
+        
+        
+        //"INSERT INTO automobile.CUSTOMERS (username, customer_name, password, mobile_number, email) values (?, ?, ?, ?, ?)";
+        
+        try {
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate(sql);
+            con.close();
+        }
+        catch (SQLException ex){
+            Logger.getLogger(userBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     //Login user
     //Check inputted values against stored credentials to update current user
-    public void signIn(String uName) {
+    public void signIn(String uName) throws FileNotFoundException, IOException {
+        addAudit();
         FacesContext fc = FacesContext.getCurrentInstance();
         ResultSet rs;
         Connection cnt = mainBean.getConnection();
@@ -44,7 +81,6 @@ public class userBean implements Serializable {
         //Select row where inputted username matches stored username
         //No longer refers to string directly, but with "?", securing against sql injection
         String sql = "SELECT * FROM automobile.CUSTOMERS WHERE USERNAME = ?";
-
         Boolean accountLockCheck = false;
 
         //Check if account is locked
@@ -53,6 +89,7 @@ public class userBean implements Serializable {
                 accountLockCheck = true;
             }
         }
+       
 
         //If account isn't locked, proceed to login
         if (accountLockCheck == false) {
