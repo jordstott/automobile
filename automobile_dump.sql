@@ -58,7 +58,7 @@ DROP TABLE IF EXISTS `customers`;
 CREATE TABLE `customers` (
   `USERNAME` varchar(20) NOT NULL,
   `CUSTOMER_NAME` varchar(30) NOT NULL,
-  `PASSWORD` varchar(16) NOT NULL,
+  `PASSWORD` varchar(256) NOT NULL,
   `MOBILE_NUMBER` varchar(12) NOT NULL,
   `EMAIL` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`USERNAME`)
@@ -71,7 +71,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES ('amcquaide4','Alonzo McQuaide','CFoD1IJMD','06069166708','amcquaide4@theatlantic.com'),('hcurnucke1','Honor Curnucke','HADMaQP5l44','03998482610','hcurnucke1@goo.gl'),('igiblin3','Issie Giblin','r8VKEy','05558969834','igiblin3@indiegogo.com'),('Test','Test User','test1','02035449972','kgodfery0@tripadvisor.com'),('wlyndon2','Wallace Lyndon','lJnsr8','04989449763','wlyndon2@npr.org');
+INSERT INTO `customers` VALUES ('amcquaide4','Alonzo McQuaide','CFoD1IJMD','06069166708','amcquaide4@theatlantic.com'),('BG123','Bob Geldof','60a10339d0ffd26b07ffc015c5f67329a4ad062c4644441892e0ebaa5364fa39','0','bob@gmail.com'),('hcurnucke1','Honor Curnucke','HADMaQP5l44','03998482610','hcurnucke1@goo.gl'),('igiblin3','Issie Giblin','r8VKEy','05558969834','igiblin3@indiegogo.com'),('jSmith','john smith','60a10339d0ffd26b07ffc015c5f67329a4ad062c4644441892e0ebaa5364fa39','0','johnsmith@gmail.com'),('Test','Test User','test1','02035449972','kgodfery0@tripadvisor.com'),('wlyndon2','Wallace Lyndon','lJnsr8','04989449763','wlyndon2@npr.org');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-26  9:37:31
+-- Dump completed on 2019-04-11 11:29:50
