@@ -73,6 +73,7 @@ public class userBean implements Serializable {
         FacesContext fc = FacesContext.getCurrentInstance();
         ResultSet rs;
         Connection cnt = mainBean.getConnection();
+        String hashedUInput = null;
 
         //Select row where inputted username matches stored username
         //No longer refers to string directly, but with "?", securing against sql injection
@@ -107,9 +108,11 @@ public class userBean implements Serializable {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+            
+            hashedUInput = getSHA256(mainBean.getTempPassword());
 
             //Check if the username and password matches stored credentials
-            if (mainBean.getTempUsername().equalsIgnoreCase(username) && mainBean.getTempPassword().equalsIgnoreCase(password)) {
+            if (mainBean.getTempUsername().equalsIgnoreCase(username) && hashedUInput.equalsIgnoreCase(password)) {
 
                 //If matches, proceed to login
                 try {
@@ -165,6 +168,7 @@ public class userBean implements Serializable {
         FacesContext fc = FacesContext.getCurrentInstance();
         Connection cnt = mainBean.getConnection();
         ResultSet rs;
+        String hashedPass = null;
 
         //Insert all inputted data and credentials into the database
         //Query is modified to use "?" as a reference, securing against sql injection
@@ -204,11 +208,14 @@ public class userBean implements Serializable {
                 try {
                     //Create a prepared statement to prevent sql injections
                     PreparedStatement stment = cnt.prepareStatement(insertUserSQL);
-
+                    
+                    //Hashing the password
+                    hashedPass = getSHA256(mainBean.getTempNewPassword());
+                    
                     //Set all the variables so they can be used in the query as "?"
                     stment.setString(1, mainBean.getTempNewUsername());
                     stment.setString(2, mainBean.getTempNewName());
-                    stment.setString(3, mainBean.getTempNewPassword());
+                    stment.setString(3, hashedPass);
                     stment.setInt(4, mainBean.getTempNewMobileNumber());
                     stment.setString(5, mainBean.getTempNewEmail());
                     stment.executeUpdate();
@@ -241,6 +248,23 @@ public class userBean implements Serializable {
                     + "Please try again."));
         }
     }
+    private static String getSHA256(String passToHash){
+        String generatedPass = null;
+        try{
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] bytes = md.digest(passToHash.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i< bytes.length; i++){
+                sb.append(Integer.toString((bytes[i]& 0xff)+ 0x100, 16).substring(1));
+            }
+            generatedPass = sb.toString();
+        }
+        catch (NoSuchAlgorithmException e){
+            Logger.getLogger(userBean.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return generatedPass;
+        
+    } 
 
     /**
      * @return the username
