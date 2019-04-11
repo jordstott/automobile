@@ -56,11 +56,7 @@ public class userBean implements Serializable {
         
         String sql = "INSERT INTO automobile.audit VALUES( '" + user + "', '" 
                     + date + "');";
-        
-        
-        
-        //"INSERT INTO automobile.CUSTOMERS (username, customer_name, password, mobile_number, email) values (?, ?, ?, ?, ?)";
-        
+       
         try {
             Statement stmt = con.createStatement();
             stmt.executeUpdate(sql);
